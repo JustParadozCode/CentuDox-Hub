@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loadstring</title>
+    <style>
+        :root{--bg:#1a1e30;--fg:#fff;--muted:#d1d1d1;--pane:#121626;--pane2:#0f1322;--kw:#569cd6;--str:#ce9178;}
+        *{box-sizing:border-box}
+        body{margin:0;font-family:sans-serif;background-color:var(--bg);color:var(--fg);display:flex;align-items:center;justify-content:center;min-height:100vh}
+        .container{text-align:center;padding:20px;width:min(900px,92vw)}
+        .brand-text{font-size:18px;font-weight:600;margin-bottom:16px}
+        .editor{position:relative;text-align:left;border-radius:10px;background:linear-gradient(180deg,var(--pane),var(--pane2));padding:14px 44px 14px 14px;overflow:auto;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+        pre{margin:0}code{font-family:monospace;font-size:14px;line-height:1.5}
+        .copy{position:absolute;top:8px;right:8px;border:0;border-radius:8px;background:#2a3150;color:#fff;padding:6px 10px;font-size:12px;cursor:pointer}
+        .hint{font-size:12px;color:var(--muted);margin-top:10px}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand-text">📜 Loadstring Loader</div>
+        <div class="editor">
+            <button class="copy" onclick="copyText()">Copy</button>
+            <pre><code id="script-display"></code></pre>
+        </div>
+        <div class="hint">Contents cannot be displayed on browser • Execute via your tool</div>
+    </div>
+
+    <script>
+        // 1. PLACE YOUR RAW ROBLOX SCRIPT IN BETWEEN THESE TICKS
+        const myRobloxScript = `script_key = "KEY"; 
+loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/cc815ef92aaf3ed41a37aa4d87cd93ff.lua"))()`;
+
+        // Display it beautifully in the browser box
+        document.getElementById("script-display").textContent = myRobloxScript;
+
+        function copyText() {
+            navigator.clipboard.writeText(myRobloxScript);
+            const btn = document.querySelector('.copy');
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 1200);
+        }
+    </script>
+</body>
+</html>
+
