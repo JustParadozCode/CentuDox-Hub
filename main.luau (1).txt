@@ -83,9 +83,9 @@ Holding=Color3.fromRGB(60,60,60),
 Default=Color3.fromRGB(38,38,38),
 },
 Text={
-    Default=Color3.fromRGB(15, 25, 50),
-    Dark=Color3.fromRGB(30, 40, 65),
-    Darker=Color3.fromRGB(50, 60, 85),
+    Default=Color3.fromRGB(80, 0, 120),
+    Dark=Color3.fromRGB(60, 0, 90),
+    Darker=Color3.fromRGB(40, 0, 60),
 },
 Slider={
 SliderBar=Color3.fromRGB(1,76,105),
