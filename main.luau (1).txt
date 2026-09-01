@@ -87,7 +87,6 @@ Text={
     Dark=Color3.fromRGB(0, 170, 170),
     Darker=Color3.fromRGB(0, 140, 140),
 },
-},
 Slider={
 SliderBar=Color3.fromRGB(1,76,105),
 SliderNumber=Color3.fromRGB(232,233,235),
